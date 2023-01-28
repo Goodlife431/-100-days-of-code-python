@@ -17,13 +17,13 @@ def play():
 while True:
     print("My Pod Music Player")
     time.sleep(1)
-    os.system("clear")
+    os.system('clear')
     print("""
   Press 1 to Play
   Press 2 to exit
   """)
     press = int(input())
-    os.system("clear")
+    os.system('clear')
     if press == 1:
         print("Playing some proper tunes")
         play()
