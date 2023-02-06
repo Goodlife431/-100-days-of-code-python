@@ -1,4 +1,5 @@
-import time, os
+import os
+import time
 
 if __name__ == '__main__':
     to_do_list = []
@@ -9,7 +10,7 @@ if __name__ == '__main__':
         print("ToDoList")
         for index in range(1, len(to_do_list)):
             print(f'{index}: {to_do_list[index]}')
-            time.sleep(0.5)
+            time.sleep(0.6)
 
 
     while True:
@@ -26,10 +27,8 @@ if __name__ == '__main__':
             pretty_print()
         elif menu == 2:
             my_list = input('What do you want to add: ')
-            added_list = to_do_list.append(my_list)
-            if added_list == to_do_list:
-                print('This item has already been added')
-                to_do_list.remove(my_list)
+            if my_list not in to_do_list:
+                to_do_list.append(my_list)
         elif menu == 3:
             my_list = input("remove item from list-> ")
             check = input("Are you sure you want to remove item from list(yes or no)-> ")
