@@ -12,7 +12,7 @@ if __name__ == '__main__':
 
     def email_spammer():
         for i in range(len(list_of_email)):
-            print(f"'email {i}\n Dear{list_of_email[i]}\n It has come to our attention that you're missing out on the "
+            print(f"'email{i}\n Dear{list_of_email[i]}\n It has come to our attention that you're missing out on the "
                   f"amazing"
                   f"Replit 100 days of code. We insist you do it right away. If you don't we will pass on your email "
                   f"address to every spammer we've ever encountered and also sign you up to the My Little Pony "
