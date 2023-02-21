@@ -1,8 +1,17 @@
 import os
 import time
+import random
 
 if __name__ == '__main__':
     to_do_list = []
+    file_exists = True
+    try:
+        f = open("to_do_list.txt", "r")
+        to_do_list = eval(f.read())
+        f.close()
+    except Exception as err:
+        file_exists = False
+        print(err)
 
 
     def pretty_print():
@@ -49,4 +58,15 @@ if __name__ == '__main__':
         elif menu == 6:
             exit()
 
+        if file_exists:
+            try:
+                os.mkdir("backups")
+            except Exception as err:
+                pass
+                print(err)
+                name = f"backup{random.randint(1, 1000000000)}.txt"
+                os.popen(f"cp to_do_list.txt backups/{name}")
 
+        f = open("to_do_list.txt", "w")
+        f.write(str(to_do_list))
+        f.close()
